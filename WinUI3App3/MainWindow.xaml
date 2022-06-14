@@ -1,0 +1,55 @@
+﻿<Window
+    x:Class="WinUI3App3.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUI3App3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:wctprimitives="using:CommunityToolkit.WinUI.UI.Controls.Primitives"
+    mc:Ignorable="d" Activated="MainWindow_Activated">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="AppTitleBar">
+            <Image Source="Assets/StoreLogo.png"
+                   HorizontalAlignment="Left" 
+                   Width="16" Height="16" 
+                   Margin="8,0"/>
+            <TextBlock x:Name="AppTitleTextBlock" Text="WinUI3 Desktop App"
+                       TextWrapping="NoWrap"
+                       Style="{StaticResource CaptionTextBlockStyle}" 
+                       VerticalAlignment="Center"
+                       Margin="28,0,0,0"/>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <controls:DataGrid x:Name="WinUI3DataGrid" 
+                               AutoGenerateColumns="False" 
+                               GridLinesVisibility="All" 
+                               IsReadOnly="True" 
+                               LoadingRowGroup="WinUI3DataGrid_LoadingRowGroup"
+                               RowGroupHeaderPropertyNameAlternative="会社名">
+                    <controls:DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="wctprimitives:DataGridColumnHeader">
+                            <Setter Property="FontSize" Value="15"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </controls:DataGrid.ColumnHeaderStyle>
+                
+                <controls:DataGrid.Columns>
+                    <controls:DataGridTextColumn Header="顧客ID" Binding="{Binding Id}"  />
+                    <controls:DataGridTextColumn Header="名前（姓）" Binding="{Binding FirstName}" />
+                    <controls:DataGridTextColumn Header="名前（名）太郎" Binding="{Binding LastName}"  />
+                    <controls:DataGridTextColumn Header="住所" Binding="{Binding Address}" />
+                    <controls:DataGridTextColumn Header="郵便番号" Binding="{Binding PostalCode}" />
+                    <controls:DataGridTextColumn Header="会社名" Binding="{Binding CompanyName}" />
+                    <controls:DataGridTextColumn Header="部署名" Binding="{Binding Department}" />
+                </controls:DataGrid.Columns>
+            </controls:DataGrid>
+        </StackPanel>
+    </Grid>    
+</Window>
