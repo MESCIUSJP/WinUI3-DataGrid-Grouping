@@ -27,18 +27,19 @@
         </Grid>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <controls:DataGrid x:Name="WinUI3DataGrid" 
-                               AutoGenerateColumns="False" 
-                               GridLinesVisibility="All" 
-                               IsReadOnly="True" 
-                               LoadingRowGroup="WinUI3DataGrid_LoadingRowGroup"
-                               RowGroupHeaderPropertyNameAlternative="会社名">
-                    <controls:DataGrid.ColumnHeaderStyle>
-                        <Style TargetType="wctprimitives:DataGridColumnHeader">
-                            <Setter Property="FontSize" Value="15"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                        </Style>
-                    </controls:DataGrid.ColumnHeaderStyle>
+            <controls:DataGrid 
+                x:Name="WinUI3DataGrid" 
+                AutoGenerateColumns="False" 
+                GridLinesVisibility="All" 
+                IsReadOnly="True" 
+                LoadingRowGroup="WinUI3DataGrid_LoadingRowGroup"
+                RowGroupHeaderPropertyNameAlternative="会社名">
+                <controls:DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="wctprimitives:DataGridColumnHeader">
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                    </Style>
+                </controls:DataGrid.ColumnHeaderStyle>
                 
                 <controls:DataGrid.Columns>
                     <controls:DataGridTextColumn Header="顧客ID" Binding="{Binding Id}"  />

@@ -38,7 +38,6 @@ namespace WinUI3App3
                 groups.Add(info);
             }
 
-
             CollectionViewSource groupedItems = new()
             {
                 IsSourceGrouped = true,

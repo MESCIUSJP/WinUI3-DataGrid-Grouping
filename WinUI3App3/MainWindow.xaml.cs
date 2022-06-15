@@ -23,6 +23,8 @@ namespace WinUI3App3
             SetTitleBar(AppTitleBar);      // set user ui element as titlebar
 
             WinUI3DataGrid.ItemsSource = customerViewModel.GroupedCustomers().View;
+
+            //WinUI3DataGrid.ItemsSource = customerViewModel.Customers();
         }
 
         private void MainWindow_Activated(object sender, WindowActivatedEventArgs args)
